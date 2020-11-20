@@ -21,22 +21,21 @@ This is a search platform for people to find different types of DIY arts and cra
 
 ## Server Routes (Back-end):
 
-| **Method** | **Route**                       | **Description**                                                                                    | Request - Body              |
-| ---------- | ------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------- |
-| `GET`      | `/`                             | Main page route. Renders home `Home` view.                                                         |                             |
-| `GET`      | `/login`                        | Renders `Login` form view.                                                                         |                             |
-| `POST`     | `/login`                        | Sends Login form data to the server.                                                               | {username, email, password} |
-| `GET`      | `/signup`                       | Renders `Signup` form view.                                                                        |                             |
-| `POST`     | `/signup`                       | Sends Sign Up info to the server and creates user in the DB.                                       | {username,email, password } |
-| `GET`      | `/results`                      | Renders results page                                                                               |                             |
-| `POST`     | `/results`                      | sends user input from searchbar to the server and renders the results page based on the searchword |                             |
-| `GET`      | `/private/favorites/:userId`    | Private route. Renders favorites list aswell as personalised profile icon                          |                             |
-| `POST`     | `/private/favorites/:userId`    | adds craft that user likes to his favorites page                                                   |                             |
-| `DELETE`   | `/private/favorites/:userId`    | Removes craft from favorite list                                                                   |                             |
-| `GET`      | `/private/addCraft/:userId`     | Renders form where user can add his own craft idea to the DB                                       |                             |
-| `POST`     | `/private/addCraft/:userId`     | Send user input to the server and save to the DB.                                                  | {...tbd }                   |
-| `PUT`      | `/private/editCraft/:craftId`   | User can edit their own posts.                                                                     |                             |
-| `DELETE`   | `/private/deleteCraft/:craftId` | User can delete their own posts.                                                                   |                             |
+| **Method** | **Route**                    | **Description**                                                           | Request - Body              |
+| ---------- | ---------------------------- | ------------------------------------------------------------------------- | --------------------------- |
+| `GET`      | `/`                          | Main page route. Renders home `Home` view.                                |                             |
+| `GET`      | `/login`                     | Renders `Login` form view.                                                |                             |
+| `POST`     | `/login`                     | Sends Login form data to the server.                                      | {username, email, password} |
+| `GET`      | `/signup`                    | Renders `Signup` form view.                                               |                             |
+| `POST`     | `/signup`                    | Sends Sign Up info to the server and creates user in the DB.              | {username,email, password } |
+| `GET`      | `/results`                   | Renders results page                                                      |                             |
+| `GET`      | `/private/favorites/:userId` | Private route. Renders favorites list aswell as personalised profile icon |                             |
+| `POST`     | `/private/favorites/:userId` | adds craft that user likes to his favorites page                          |                             |
+| `DELETE`   | `/private/favorites/:userId` | Removes craft from favorite list                                          |                             |
+| `GET`      | `/private/add-craft`         | Renders form where user can add his own craft idea to the DB              |                             |
+| `POST`     | `/private/add-craft`         | Send user input to the server and save to the DB.                         | {...tbd }                   |
+| `PUT`      | `/private/edit-craft`        | User can edit their own posts.                                            |                             |
+| `DELETE`   | `/private/delete-craft`      | User can delete their own posts.                                          |                             |
 
 ## Models
 
@@ -44,12 +43,11 @@ User model
 
 ```
 {
-	_id:
-  username: String,
-  email: String,
-  password: String,
-  favorites: [CraftId, CraftId, CraftId],
-
+  "username": String,
+  "email": String,
+  "password": String,
+  "created": [{ type: Schema.Types.ObjectId, ref: 'Craft' }],
+  "favorites": [{ type: Schema.Types.ObjectId, ref: 'Craft' }]
 }
 ```
 
@@ -57,14 +55,14 @@ Craft model
 
 ```
 {
-  id:
-  title: String,
-  image: String,
-  category: String,
-  description: String,
-  materials: [String],
-  instructions: String,
-  favoritedBy: [UserId, UserId, UserId]
+  "author": { type: Schema.Types.ObjectId, ref: 'User' },
+  "title": String,
+  "image": String,
+  "category": String,
+  "description": String,
+  "materials": [String],
+  "instructions": String,
+  "favoritedBy": [{ type: Schema.Types.ObjectId, ref: 'User' }]
 }
 ```
 
