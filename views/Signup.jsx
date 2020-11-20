@@ -9,6 +9,10 @@ function Signup(props) {
         <br />
         <input type="text" name="username" placeholder="Your username" />
 
+        <label>Email</label>
+        <br />
+        <input type="email" name="email" placeholder="Your email address" />
+
         <label>Password</label>
         <br />
         <input type="password" name="password" />

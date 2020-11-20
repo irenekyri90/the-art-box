@@ -20,8 +20,8 @@ authRouter.get("/signup", (req, res, next) => {
 authRouter.post("/signup", (req, res, next) => {
   // 1 - Get the values coming from the form:
   //     req.body.username  req.body.password
-  const { username, password } = req.body;
-  console.log(username, password);
+  const { username, password, email } = req.body;
+  console.log(username, password, email);
 
   // 2 - Check if `username` and `password` are empty and display error message
   if (username === "" || password === "") {
@@ -40,6 +40,17 @@ authRouter.post("/signup", (req, res, next) => {
     return;
   }
 
+  //CHECK IF EMAIL ALREADY EXISTS
+  User.findOne({ email: email })
+    .then((user) => {
+      if (user) {
+        const props = { errorMessage: "The email already exists" };
+        res.render("Signup", props);
+        return;
+      }
+    })
+    .catch((err) => console.log(err));
+
   // 3 - Check the users collection to see if `username` is already taken
   User.findOne({ username: username })
     .then((user) => {
@@ -55,7 +66,11 @@ authRouter.post("/signup", (req, res, next) => {
       const hashedPassword = bcrypt.hashSync(password, salt);
 
       // After encrypting the password, create the new user in DB
-      User.create({ username: username, password: hashedPassword })
+      User.create({
+        username: username,
+        password: hashedPassword,
+        email: email,
+      })
         .then((createdUser) => {
           // When the new user is created, redirect to the home page
           //console.log("USER CREATED SUCCESFULLY");
