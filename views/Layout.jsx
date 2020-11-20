@@ -9,7 +9,28 @@ function Layout(props) {
         <link rel="stylesheet" href="/stylesheets/style.css" />
       </head>
 
-      <body>{props.children}</body>
+      <body>
+        <header>
+          <nav>
+            <ul>
+              <li>Your Profile</li>
+              <li>Login</li>
+              <li>Signup</li>
+            </ul>
+            <button>
+              <a href="/auth/logout">Log out</a>
+            </button>
+          </nav>
+        </header>
+        <main>{props.children}</main>
+        <footer>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </footer>
+      </body>
     </html>
   );
 }
