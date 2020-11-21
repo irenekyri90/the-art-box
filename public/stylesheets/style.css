@@ -1,8 +1,153 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  padding: 50px;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ /*************************************************************************/
+
+ /* font-family: 'Poppins', sans-serif; */
+ /* font-family: 'Raleway', sans-serif; */
+
+
+body {
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+main {
+  min-height: 100vh;
+  
 }
+
+
+/* .bg-dark {
+  background-color: #14140c !important;
+} */
+ /**********************************navbar - footer*********************************/
+.navbar {
+  background-color: #679B9B !important;
+  height: 100px;
+}
+
+footer {
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  background-color: #F7C5A8;
+  
+}
+
+.footer-icon {
+  font-size: 1.3rem;
+  padding: 20px;
+}
+
+ /**********************************homepage*********************************/
+#top-quote {
+  margin-top: 60px;;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.category-container {
+  border: 1px solid black;
+  height: 250px;
+  width: 200px;
+  border-radius: 3%;
+}
+
+#categories {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+#categories a {
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: 
+}
+
+.wellness {
+  background-image: url("../images/wellness.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jewelry {
+  background-image: url("../images/jewel.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gardening {
+  background-image: url("../images/gardening.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.misc {
+  background-image: url("../images/misc.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.decor {
+  background-image: url("../images/home-decor.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#categories h3 {
+  text-align: center;
+  margin-top: 185px;
+  font-size: 1.8rem;
+  color: white;
+  
+}
+

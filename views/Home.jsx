@@ -5,26 +5,42 @@ const Card = require("./components/Card");
 function Home() {
   return (
     <Layout title="Home Page">
-      <h1>Home Page</h1>
-      <button>
-        <a href="/results/Wellness">WELLNESS</a>
-      </button>
+      <h1 id="top-quote">"Being Creative is not a Hobby, it's a Way of Life!"</h1>
+      
+      <div id="categories">
+        <a href="/results/Wellness">
+          <div class="category-container wellness" >
+            <h3>Wellness</h3>
+          </div>
+        </a>
+      
 
-      <button>
-        <a href="/results/Gardening">GARDENING</a>
-      </button>
+      
+        <a href="/results/Gardening">
+          <div class="category-container gardening" >
+            <h3>Gardening</h3>
+          </div>
+        </a>
 
-      <button>
-        <a href="/results/Misc">MISC</a>
-      </button>
 
-      <button>
-        <a href="/results/Home Decor">HOME DECOR</a>
-      </button>
+        <a href="/results/Misc">
+          <div class="category-container misc" >
+            <h3>Misc</h3>
+          </div>
+        </a>
 
-      <button>
-        <a href="/results/Jewelry">JEWELLERY</a>
-      </button>
+        <a href="/results/Home Decor">
+          <div class="category-container decor" >
+            <h3>Home Decor</h3>
+          </div>
+        </a>
+
+        <a href="/results/Jewelry">
+          <div class="category-container jewelry" >
+            <h3>Jewelry</h3>
+          </div>
+        </a>
+      </div>
     </Layout>
   );
 }
