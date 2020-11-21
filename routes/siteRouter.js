@@ -3,6 +3,7 @@ const Craft = require("../models/Craft.model");
 const User = require("../models/User.model");
 const siteRouter = express.Router();
 const isLoggedIn = require("../utils/isLoggedIn");
+const parser = require('./../config/cloudinary');
 
 // Public routes
 // GET     /site/...
@@ -58,7 +59,8 @@ siteRouter.get("/addPost", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-siteRouter.post("/addPost", (req, res, next) => {
+siteRouter.post("/addPost", parser.single("imageURL"), (req, res, next) => {
+  const imageUrl = req.file.secure_url;
   const { _id } = req.session.currentUser;
   const {
     title,
@@ -69,9 +71,11 @@ siteRouter.post("/addPost", (req, res, next) => {
     instructions,
   } = req.body;
 
+  console.log("TITLE INPUT", req.body.title)
+
   Craft.create({
     title: title,
-    imageURL: imageURL,
+    imageURL: imageUrl,
     category: category,
     description: description,
     materials: materials,
