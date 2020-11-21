@@ -6,10 +6,7 @@ function Layout(props) {
       <head>
         <meta charSet="utf-8" />
         <title> {props.title ? props.title : "My App"} </title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,300;1,400&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,500;1,300&display=swap" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></link>
         <link rel="stylesheet" href="/stylesheets/style.css" />
         <script src="https://kit.fontawesome.com/fce4b78cef.js" crossorigin="anonymous"></script>
@@ -18,7 +15,7 @@ function Layout(props) {
       <body>
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-          <a class="navbar-brand" href="#"><img src="./../images/TheArtBox.png" alt="/></a>
+          <a class="navbar-brand" href="#"><img src="./../images/TheArtBox.png" alt="logo"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
