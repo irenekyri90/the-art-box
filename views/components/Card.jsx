@@ -2,11 +2,12 @@ const React = require("react");
 
 function Card(props) {
   return (
-    <div>
-      <h1>Card component example</h1>
-      <img src={props.image} width="100" alt="" />
-      <p>{props.text}</p>
-    </div>
+    <a href={`/details/${props.craft._id}`}>
+      <div>
+        <h1>{props.craft.title}</h1>
+        <img src={props.craft.imageURL} width="300px" height="auto" />
+      </div>
+    </a>
   );
 }
 

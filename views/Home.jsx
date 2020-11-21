@@ -21,6 +21,10 @@ function Home() {
       <button>
         <a href="/results/Home Decor">HOME DECOR</a>
       </button>
+
+      <button>
+        <a href="/results/Jewelry">JEWELLERY</a>
+      </button>
     </Layout>
   );
 }

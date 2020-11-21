@@ -9,7 +9,7 @@ const isLoggedIn = require("../utils/isLoggedIn");
 siteRouter.get("/results/:category", (req, res, next) => {
   const category = req.params.category;
   console.log(
-    `THE CATEFORY IS: ${category} and the type is ${typeof category}`
+    `THE CATEGORY IS: ${category} and the type is ${typeof category}`
   );
   Craft.find({ category: category })
     .then((craftsFromDB) => {
@@ -23,9 +23,11 @@ siteRouter.get("/results/:category", (req, res, next) => {
 });
 
 siteRouter.get("/details/:id", (req, res, next) => {
-  const craftId = req.params;
+  const craftId = req.params.id;
+  console.log("CRAFTID:", craftId);
   Craft.findById(craftId)
     .then((craft) => {
+      console.log("CRAFT: ", craft);
       const props = { craft: craft };
       res.render("Details", props);
     })
