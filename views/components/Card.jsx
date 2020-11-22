@@ -6,6 +6,7 @@ function Card(props) {
       <div>
         <h1>{props.craft.title}</h1>
         <img src={props.craft.imageURL} width="300px" height="auto" />
+        <button><a>Save Post</a></button>
       </div>
     </a>
   );
