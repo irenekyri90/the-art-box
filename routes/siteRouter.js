@@ -105,12 +105,32 @@ siteRouter.post("/addPost", parser.single("imageURL"), (req, res, next) => {
 siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
   const craftId = req.params.id;
   const { _id } = req.session.currentUser;
-  User.findByIdAndUpdate(_id, { $push: { favorites: craftId } }, { new: true })
-    .then((user) => {
-      console.log(user);
-      res.redirect("/favorites");
-    })
-    .catch((err) => console.log(err));
+
+  User.findById(_id).then((user) => {
+    if (user.favorites.includes(craftId)) {
+      console.log("already included");
+      res.redirect("/");
+    } else {
+      console.log("not included");
+      User.findByIdAndUpdate(
+        user._id,
+        { $push: { favorites: craftId } },
+        { new: true }
+      )
+        .then((user) => {
+          console.log("UPDATED USER:", user);
+          res.redirect("/favorites");
+        })
+        .catch((err) => console.log(err));
+    }
+  });
+
+  // User.findByIdAndUpdate(_id, { $push: { favorites: craftId } }, { new: true })
+  //   .then((user) => {
+  //     //console.log(user);
+  //     res.redirect("/favorites");
+  //   })
+  //   .catch((err) => console.log(err));
 });
 
 module.exports = siteRouter;
