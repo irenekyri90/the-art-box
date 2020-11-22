@@ -136,4 +136,14 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
   });
 });
 
+siteRouter.get("/deletePost/:id", (req, res, next) => {
+  const craftId = req.params.id;
+  console.log("CRAFTID:", craftId);
+  Craft.findOneAndDelete({ _id: craftId })
+    .then((deletedCraft) => {
+      res.redirect("/favorites");
+    })
+    .catch((err) => console.log(err));
+});
+
 module.exports = siteRouter;

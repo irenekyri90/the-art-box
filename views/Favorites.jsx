@@ -11,7 +11,7 @@ function Favorites(props) {
         return <Card key={i} craft={craft} />;
       })}
       <h1>My own Posts</h1>
-      <button>
+      <button className="shareButton">
         <a href="/addPost">Share your ideas!</a>
       </button>
       {props.user.posts.map((craft, i) => {

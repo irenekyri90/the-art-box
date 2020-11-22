@@ -17,7 +17,6 @@ function Details(props) {
           return <li key={i}>{element}</li>;
         })}
       </ol>
-      {/* {oneCraft.createdBy !== null ? ()} */}
     </Layout>
   );
 }

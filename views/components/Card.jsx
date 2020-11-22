@@ -11,15 +11,12 @@ function Card(props) {
         <button>
           <a href={`/savePost/${props.craft._id}`}>Save Post</a>
         </button>
-        {console.log("PROPS:USERID", props.userId)}
-        {console.log("PROPS:CREATEDBY", props.craft.createdBy)}
+
         {createdBy === userId ? (
           <button>
-            <a href={`/savePost/${props.craft._id}`}>Delete Post</a>
+            <a href={`/deletePost/${props.craft._id}`}>Delete Post</a>
           </button>
-        ) : (
-          <h1>Bye</h1>
-        )}
+        ) : null}
       </div>
     </a>
   );
