@@ -3,10 +3,12 @@ const React = require("react");
 function Card(props) {
   return (
     <a href={`/details/${props.craft._id}`}>
-      <div>
+      <div className="card">
+        <img src={props.craft.imageURL} />
         <h1>{props.craft.title}</h1>
-        <img src={props.craft.imageURL} width="300px" height="auto" />
-        <button><a>Save Post</a></button>
+        <button>
+          <a href={`/savePost/${props.craft._id}`}>Save Post</a>
+        </button>
       </div>
     </a>
   );

@@ -251,3 +251,24 @@ footer {
 #add-craft > div > label {
   margin: 10px 10px 20px 20px;
 }
+
+/**********************************Results*********************************/
+
+.card {
+  border: 2px solid black;
+  border-radius: 6px;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+  width: 330px;
+}
+
+.card img {
+  width: 300px;
+  height: auto;
+}
+
+.card button {
+  width: 50px;
+  margin: 0 auto;
+}

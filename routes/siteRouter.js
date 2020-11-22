@@ -40,8 +40,11 @@ siteRouter.get("/details/:id", (req, res, next) => {
 siteRouter.get("/favorites", isLoggedIn, (req, res, next) => {
   const { _id } = req.session.currentUser;
   User.findById(_id)
+    .populate("posts")
+    .populate("favorites")
     .then((user) => {
-      console.log(user);
+      //console.log("USER POSTS:", user.posts);
+
       const props = { user: user };
       res.render("Favorites", props);
     })
@@ -87,14 +90,25 @@ siteRouter.post("/addPost", parser.single("imageURL"), (req, res, next) => {
       console.log("USER ID: ", _id);
       User.findByIdAndUpdate(
         _id,
-        { $set: { posts: createdCraft } },
+        { $push: { posts: createdCraft } },
         { new: true }
       )
         .then((user) => {
           console.log("USER", user);
-          res.redirect("/results");
+          res.redirect("/favorites");
         })
         .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+});
+
+siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
+  const craftId = req.params.id;
+  const { _id } = req.session.currentUser;
+  User.findByIdAndUpdate(_id, { $push: { favorites: craftId } }, { new: true })
+    .then((user) => {
+      console.log(user);
+      res.redirect("/favorites");
     })
     .catch((err) => console.log(err));
 });

@@ -12,6 +12,9 @@ function Favorites(props) {
       })}
       <h1>My own Posts</h1>
       {props.user.posts.map((craft, i) => {
+        {
+          console.log("CRAFT:", craft);
+        }
         return <Card key={i} craft={craft} />;
       })}
     </Layout>
