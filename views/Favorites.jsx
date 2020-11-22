@@ -11,11 +11,15 @@ function Favorites(props) {
         return <Card key={i} craft={craft} />;
       })}
       <h1>My own Posts</h1>
+      <button>
+        <a href="/addPost">Share your ideas!</a>
+      </button>
       {props.user.posts.map((craft, i) => {
-        {
-          console.log("CRAFT:", craft);
-        }
-        return <Card key={i} craft={craft} />;
+        return (
+          <div>
+            <Card key={i} craft={craft} userId={props.user._id} />
+          </div>
+        );
       })}
     </Layout>
   );

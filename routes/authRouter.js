@@ -74,7 +74,7 @@ authRouter.post("/signup", (req, res, next) => {
         .then((createdUser) => {
           // When the new user is created, redirect to the home page
           //console.log("USER CREATED SUCCESFULLY");
-          res.redirect("/");
+          res.redirect("/auth/login");
         })
         .catch((err) => console.log(err));
     })

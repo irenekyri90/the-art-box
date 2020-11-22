@@ -106,6 +106,16 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
   const craftId = req.params.id;
   const { _id } = req.session.currentUser;
 
+  Craft.findByIdAndUpdate(
+    craftId,
+    { $push: { favoritedBy: _id } },
+    { new: true }
+  )
+    .then((craft) => {
+      console.log("User added to Craft");
+    })
+    .catch((err) => console.log(err));
+
   User.findById(_id).then((user) => {
     if (user.favorites.includes(craftId)) {
       console.log("already included");
@@ -124,13 +134,6 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
         .catch((err) => console.log(err));
     }
   });
-
-  // User.findByIdAndUpdate(_id, { $push: { favorites: craftId } }, { new: true })
-  //   .then((user) => {
-  //     //console.log(user);
-  //     res.redirect("/favorites");
-  //   })
-  //   .catch((err) => console.log(err));
 });
 
 module.exports = siteRouter;

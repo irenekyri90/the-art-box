@@ -4,19 +4,20 @@ const Layout = require("./Layout");
 function Signup(props) {
   return (
     <Layout>
-      <form id="form" action="/auth/signup" method="POST">
+      <h1 class="top-quote">"I craft so hard I sweat glitter."</h1>
+      <form id="signup-form" action="/auth/signup" method="POST">
         <label>Username</label>
-        <br />
+
         <input type="text" name="username" placeholder="Your username" />
-
+        <br />
         <label>Email</label>
-        <br />
+
         <input type="email" name="email" placeholder="Your email address" />
-
-        <label>Password</label>
         <br />
-        <input type="password" name="password" />
+        <label>Password</label>
 
+        <input type="password" name="password" />
+        <br />
         <button type="submit">Create account</button>
 
         {props.errorMessage ? (
