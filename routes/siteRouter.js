@@ -136,7 +136,37 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
   });
 });
 
-siteRouter.get("/deletePost/:id", (req, res, next) => {
+siteRouter.get("/unsavePost/:id", isLoggedIn, (req, res, next) => {
+  const craftId = req.params.id;
+  const { _id } = req.session.currentUser;
+
+  Craft.findByIdAndUpdate(
+    craftId,
+    { $pull: { favoritedBy: _id } },
+    { new: true }
+  )
+    .then((craft) => {
+      console.log("User removed from Craft");
+    })
+    .catch((err) => console.log(err));
+
+  User.findById(_id).then((user) => {
+   
+      User.findByIdAndUpdate(
+        user._id,
+        { $pull: { favorites: craftId } },
+        { new: true }
+      )
+        .then((user) => {
+          console.log("UPDATED USER:", user);
+          res.redirect("/favorites");
+        })
+        .catch((err) => console.log(err));
+    })
+});
+
+
+siteRouter.get("/deletePost/:id", isLoggedIn, (req, res, next) => {
   const craftId = req.params.id;
   console.log("CRAFTID:", craftId);
   Craft.findOneAndDelete({ _id: craftId })

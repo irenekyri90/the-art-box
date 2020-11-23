@@ -8,7 +8,7 @@ function Favorites(props) {
       <h3>HELLO, {props.user.username}</h3>
       <h1>Saved Posts</h1>
       {props.user.favorites.map((craft, i) => {
-        return <Card key={i} craft={craft} />;
+        return <Card key={i} craft={craft} displayUnsaveBtn = {true} />;
       })}
       <h1>My own Posts</h1>
       <button className="shareButton">
