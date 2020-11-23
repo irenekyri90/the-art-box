@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const Craft = require("./../models/Craft.model");
 const User = require("./../models/User.model");
@@ -11,7 +12,7 @@ const DB_NAME = "theArtBoxDB";
 // 0. ESTABLISH CONNECTION TO MONGO DATABASE
 
 mongoose
-  .connect(`mongodb://localhost:27017/${DB_NAME}`, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
