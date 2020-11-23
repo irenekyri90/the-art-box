@@ -26,6 +26,12 @@ function Card(props) {
             <a href={`/unsavePost/${props.craft._id}`}>Unsave Post</a>
           </button>
         ) : null}
+
+        {props.displayEditBtn ? (
+          <button>
+            <a href={`/editPost/${props.craft._id}`}>Edit Post</a>
+          </button>
+        ) : null}
       </div>
     </a>
   );

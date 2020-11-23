@@ -176,4 +176,54 @@ siteRouter.get("/deletePost/:id", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+siteRouter.get("/editPost/:id", isLoggedIn, (req, res, next) => {
+  const craftId = req.params.id;
+  const { _id } = req.session.currentUser;
+  Craft.findById(craftId)
+  .then((craft) => {
+    const props = {craft : craft}
+    res.render("EditPost", props);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+ 
+})
+
+siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
+  let imageUrl;
+  if (req.file) imageUrl= req.file.secure_url;
+  
+  const { _id } = req.session.currentUser;
+  const {
+    id,
+    title,
+    imageURL,
+    category,
+    description,
+    materials,
+    instructions,
+  } = req.body;
+
+  //console.log("TITLE INPUT", req.body.title);
+
+  Craft.findByIdAndUpdate(id, {
+    title: title,
+    imageURL: imageUrl,
+    category: category,
+    description: description,
+    materials: materials,
+    instructions: instructions,
+    //createdBy: _id,
+  })
+    .then((updatedCraft) => {
+      res.redirect("/favorites");
+    })
+    .catch((err) => console.log(err));
+});
+
+
+
+
+
 module.exports = siteRouter;

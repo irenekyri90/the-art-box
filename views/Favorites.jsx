@@ -17,7 +17,7 @@ function Favorites(props) {
       {props.user.posts.map((craft, i) => {
         return (
           <div>
-            <Card key={i} craft={craft} userId={props.user._id} />
+            <Card key={i} craft={craft} userId={props.user._id} displayEditBtn = {true}/>
           </div>
         );
       })}

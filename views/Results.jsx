@@ -10,7 +10,7 @@ function Results(props) {
         <a href="/addPost">Share your ideas!</a>
       </button>
       {props.crafts.map((craft, i) => {
-        return <Card key={i} craft={craft} />;
+        return <Card key={i} craft={craft}/>;
       })}
     </Layout>
   );
