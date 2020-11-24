@@ -151,20 +151,18 @@ siteRouter.get("/unsavePost/:id", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 
   User.findById(_id).then((user) => {
-   
-      User.findByIdAndUpdate(
-        user._id,
-        { $pull: { favorites: craftId } },
-        { new: true }
-      )
-        .then((user) => {
-          console.log("UPDATED USER:", user);
-          res.redirect("/favorites");
-        })
-        .catch((err) => console.log(err));
-    })
+    User.findByIdAndUpdate(
+      user._id,
+      { $pull: { favorites: craftId } },
+      { new: true }
+    )
+      .then((user) => {
+        console.log("UPDATED USER:", user);
+        res.redirect("/favorites");
+      })
+      .catch((err) => console.log(err));
+  });
 });
-
 
 siteRouter.get("/deletePost/:id", isLoggedIn, (req, res, next) => {
   const craftId = req.params.id;
@@ -180,20 +178,19 @@ siteRouter.get("/editPost/:id", isLoggedIn, (req, res, next) => {
   const craftId = req.params.id;
   const { _id } = req.session.currentUser;
   Craft.findById(craftId)
-  .then((craft) => {
-    const props = {craft : craft}
-    res.render("EditPost", props);
-  })
-  .catch((err) => {
-    console.log(err);
-  })
- 
-})
+    .then((craft) => {
+      const props = { craft: craft };
+      res.render("EditPost", props);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
   let imageUrl;
-  if (req.file) imageUrl= req.file.secure_url;
-  
+  if (req.file) imageUrl = req.file.secure_url;
+
   const { _id } = req.session.currentUser;
   const {
     id,
@@ -206,6 +203,21 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
   } = req.body;
 
   //console.log("TITLE INPUT", req.body.title);
+
+  if (imageURL === undefined) {
+    Craft.findByIdAndUpdate(id, {
+      title: title,
+      category: category,
+      description: description,
+      materials: materials,
+      instructions: instructions,
+      //createdBy: _id,
+    })
+      .then((updatedCraft) => {
+        res.redirect("/favorites");
+      })
+      .catch((err) => console.log(err));
+  }
 
   Craft.findByIdAndUpdate(id, {
     title: title,
@@ -221,9 +233,5 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
-
-
-
-
 
 module.exports = siteRouter;
