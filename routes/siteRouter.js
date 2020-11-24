@@ -119,7 +119,7 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
   User.findById(_id).then((user) => {
     if (user.favorites.includes(craftId)) {
       console.log("already included");
-      res.redirect("/");
+      res.redirect("back");
     } else {
       console.log("not included");
       User.findByIdAndUpdate(
@@ -129,7 +129,7 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
       )
         .then((user) => {
           console.log("UPDATED USER:", user);
-          res.redirect("/favorites");
+          res.redirect("back");
         })
         .catch((err) => console.log(err));
     }
@@ -238,6 +238,22 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
     });
     return;
   }
+});
+
+siteRouter.get("/craft-search", (req, res, next) => {
+  const craftName = req.query.searchRequest;
+  const firstLetter = craftName.charAt(0).toUpperCase();
+  const restWord = craftName.slice(1);
+  const newWord = firstLetter + restWord;
+  Craft.find({ title: { $regex: newWord } })
+    .then((crafts) => {
+      console.log("CRAFT: ", crafts[0]);
+      const props = { crafts: crafts };
+      res.render("SearchResults", props);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = siteRouter;

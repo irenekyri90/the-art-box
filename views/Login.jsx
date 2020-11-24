@@ -1,10 +1,10 @@
-const React = require('react');
-const Layout = require('./Layout');
+const React = require("react");
+const Layout = require("./Layout");
 
-
-function Login (props) {
-  return(
+function Login(props) {
+  return (
     <Layout>
+      <h1 class="top-quote">"Creative minds are rarely tidy."</h1>
       <form id="form" action="/auth/login" method="POST">
         <label>Username</label>
         <br />
@@ -17,18 +17,15 @@ function Login (props) {
         <button type="submit">Login</button>
       </form>
 
-      {
-        props.errorMessage 
-          ? <div className="error-message"> {props.errorMessage}</div>
-          : null
-      }
+      {props.errorMessage ? (
+        <div className="error-message"> {props.errorMessage}</div>
+      ) : null}
 
       <p className="account-message">
         Don't have an account? <a href="/auth/signup">Sign up</a>
       </p>
     </Layout>
-  )
+  );
 }
-
 
 module.exports = Login;

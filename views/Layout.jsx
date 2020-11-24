@@ -13,6 +13,16 @@ function Layout(props) {
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
           crossOrigin="anonymous"
         ></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,400;1,600&display=swap"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="/stylesheets/style.css" />
         <script
           src="https://kit.fontawesome.com/fce4b78cef.js"
@@ -21,51 +31,53 @@ function Layout(props) {
       </head>
 
       <body>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-light ">
-          <a className="navbar-brand" href="#">
-            <img id="logo" src="./../images/logo.png" alt="logo" />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  Home <span className="sr-only">(current)</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/favorites">
-                  Your Favorites
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/auth/signup">
-                  Sign Up
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/auth/login">
-                  Log In
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <button>
-          <a href="/auth/logout">Log out</a>
-        </button>
-        <header></header>
+        <header>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-light ">
+            <a className="navbar-brand" href="/">
+              <img id="logo" src="./../images/logo.png" alt="logo" />
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item active">
+                  <a className="nav-link" href="/">
+                    Browse <span className="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/favorites">
+                    Favorites
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/auth/signup">
+                    Sign Up
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/auth/login">
+                    Log In
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/auth/logout">
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
         <main>{props.children}</main>
         <footer>
           <div className="footer-div">
