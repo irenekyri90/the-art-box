@@ -5,47 +5,52 @@ const Card = require("./components/Card");
 function Home() {
   return (
     <Layout title="Home Page">
-      <h1 class="top-quote">
+      <h1 className="top-quote">
         "Being Creative is not a Hobby, it's a Way of Life!"
       </h1>
+      <h3 id="category-picker">pick a category</h3>
 
       <div id="categories">
         <a href="/results/Wellness">
-          <div class="category-container wellness">
+          <div className="category-container wellness">
             <h3>Wellness</h3>
           </div>
         </a>
 
         <a href="/results/Gardening">
-          <div class="category-container gardening">
+          <div className="category-container gardening">
             <h3>Gardening</h3>
           </div>
         </a>
 
         <a href="/results/Misc">
-          <div class="category-container misc">
+          <div className="category-container misc">
             <h3>Misc</h3>
           </div>
         </a>
 
         <a href="/results/Home Decor">
-          <div class="category-container decor">
+          <div className="category-container decor">
             <h3>Home Decor</h3>
           </div>
         </a>
 
         <a href="/results/Jewelry">
-          <div class="category-container jewelry">
+          <div className="category-container jewelry">
             <h3>Jewelry</h3>
           </div>
         </a>
-
-
       </div>
-      <form action="/craft-search" method="GET">
-          <input type="text" name="searchRequest" placeholder="What are you looking for?"/>
-          <button type="submit" value="search">Search</button>
-        </form> 
+      <form action="/craft-search" method="GET" id="searchbar">
+        <input
+          type="text"
+          name="searchRequest"
+          placeholder="What are you looking for?"
+        />
+        <button type="submit" value="search">
+          Search
+        </button>
+      </form>
     </Layout>
   );
 }

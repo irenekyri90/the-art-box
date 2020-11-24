@@ -103,10 +103,10 @@ section {
 body {
   line-height: 1;
 }
-ol,
+/* ol,
 ul {
   list-style: none;
-}
+} */
 blockquote,
 q {
   quotes: none;
@@ -129,7 +129,7 @@ table {
 
 body {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 main {
@@ -146,7 +146,13 @@ main {
 }
 
 #navbarNav {
-  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 22px;
+}
+
+#navbarNav li {
+  padding-right: 20px;
 }
 
 #logo {
@@ -168,27 +174,38 @@ footer {
 
 /**********************************homepage*********************************/
 .top-quote {
-  margin-top: 60px;
+  margin-top: 80px;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-family: "Patrick Hand", cursive;
+  color: #ff9a76;
+}
+
+#category-picker {
+  text-align: center;
+  padding-top: 60px;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
 }
 
 .category-container {
-  border: 1px solid black;
-  height: 250px;
-  width: 200px;
+  border: 1px solid lightgrey;
+  height: 260px;
+  width: 210px;
   border-radius: 3%;
+  -webkit-box-shadow: 5px 5px 5px -3px rgba(86, 86, 86, 0.59);
+  box-shadow: 5px 5px 5px -3px rgba(86, 86, 86, 0.59);
 }
 
 #categories {
-  margin-top: 150px;
+  margin-top: 80px;
   display: flex;
   justify-content: space-around;
 }
 
 #categories a {
   text-decoration: none;
-  letter-spacing: 3px;
 }
 
 .wellness {
@@ -228,9 +245,22 @@ footer {
 
 #categories h3 {
   text-align: center;
-  margin-top: 185px;
+  margin-top: 205px;
   font-size: 1.8rem;
   color: white;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+#searchbar {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#searchbar > input {
+  margin: 50px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 /**********************************addPost*********************************/
@@ -255,6 +285,27 @@ footer {
 /**********************************editPost*********************************/
 #hideId {
   display: none;
+}
+
+/**********************************Favorites/Results*********************************/
+
+#favorites-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#favorites-page h1 {
+  font-size: 20px;
+}
+
+#welcome-message {
+  font-size: 30px;
 }
 
 /**********************************Card/Results*********************************/
@@ -301,3 +352,45 @@ footer {
 }
 
 /**********************************Details*********************************/
+
+#parent-div {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  line-height: 25px;
+  border: 2px solid #ff9a76;
+}
+
+#upper-details {
+  display: flex;
+}
+
+#upper-details img {
+  width: 400px;
+  height: auto;
+}
+
+#side-details {
+  margin-left: 30px;
+}
+
+#lower-details {
+  margin: 30px;
+}
+
+#lower-details li {
+  margin: 15px;
+}
+
+#parent-div h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+#parent-div h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

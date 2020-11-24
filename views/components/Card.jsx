@@ -11,26 +11,27 @@ function Card(props) {
       <div className="card">
         <img src={props.craft.imageURL} />
         <h1>{props.craft.title}</h1>
-        <button>
-          <a href={`/savePost/${props.craft._id}`}>Save Post</a>
-        </button>
+
+        <a href={`/savePost/${props.craft._id}`}>
+          <i className="fas fa-heart"></i>
+        </a>
 
         {createdBy === userId ? (
-          <button>
-            <a href={`/deletePost/${props.craft._id}`}>Delete Post</a>
-          </button>
+          <a href={`/deletePost/${props.craft._id}`}>
+            <i className="fas fa-trash-alt"></i>
+          </a>
         ) : null}
 
         {props.displayUnsaveBtn ? (
-          <button>
-            <a href={`/unsavePost/${props.craft._id}`}>Unsave Post</a>
-          </button>
+          <a href={`/unsavePost/${props.craft._id}`}>
+            <i className="fas fa-heart-broken"></i>
+          </a>
         ) : null}
 
         {props.displayEditBtn ? (
-          <button>
-            <a href={`/editPost/${props.craft._id}`}>Edit Post</a>
-          </button>
+          <a href={`/editPost/${props.craft._id}`}>
+            <i className="fas fa-pencil-alt"></i>
+          </a>
         ) : null}
       </div>
     </a>
