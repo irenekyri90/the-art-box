@@ -240,14 +240,18 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
   }
 });
 
-
-
 siteRouter.get("/craft-search", (req, res, next) => {
   const craftName = req.query.searchRequest;
   console.log(craftName);
-
-  res.render("Signup");
-})
-
+  Craft.find({ title: { $regex: craftName } })
+    .then((crafts) => {
+      console.log("CRAFT: ", crafts[0]);
+      const props = { crafts: crafts };
+      res.render("SearchResults", props);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 module.exports = siteRouter;

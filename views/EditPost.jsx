@@ -12,9 +12,7 @@ function EditPost(props) {
         method="POST"
         encType="multipart/form-data"
       >
-        <label>ID:</label>
-        <h1>{`${props.craft._id}`}</h1>
-        <input type="text" name="id" value={props.craft._id} />
+        <input type="text" name="id" value={props.craft._id} id="hideId" />
 
         <br />
 
