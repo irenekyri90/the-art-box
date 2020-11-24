@@ -240,4 +240,14 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
   }
 });
 
+
+
+siteRouter.get("/craft-search", (req, res, next) => {
+  const craftName = req.query.searchRequest;
+  console.log(craftName);
+
+  res.render("Signup");
+})
+
+
 module.exports = siteRouter;

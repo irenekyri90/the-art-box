@@ -39,7 +39,13 @@ function Home() {
             <h3>Jewelry</h3>
           </div>
         </a>
+
+
       </div>
+      <form action="/craft-search" method="GET">
+          <input type="text" name="searchRequest" placeholder="What are you looking for?"/>
+          <button type="submit" value="search">Search</button>
+        </form> 
     </Layout>
   );
 }
