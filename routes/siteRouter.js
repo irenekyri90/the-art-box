@@ -202,28 +202,31 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
     instructions,
   } = req.body;
 
-  Craft.findByIdAndUpdate(id, {
-    title: title,
-    imageURL: imageUrl,
-    category: category,
-    description: description,
-    materials: materials,
-    instructions: instructions,
-    //createdBy: _id,
-  })
-    .then((updatedCraft) => {
-      res.redirect("/favorites");
+  if (imageUrl) {
+    Craft.findByIdAndUpdate(id, {
+      title: title,
+      imageURL: imageUrl,
+      category: category,
+      description: description,
+      materials: materials,
+      instructions: instructions,
+      //createdBy: _id,
     })
-    .catch((err) => console.log(err));
+      .then((updatedCraft) => {
+        res.redirect("/favorites");
+      })
+      .catch((err) => console.log(err));
+    return;
+  }
 
   if (imageURL === undefined) {
     Craft.findById(id).then((craft) => {
       let defaultUrl = craft.imageURL;
       Craft.findByIdAndUpdate(id, {
         title: title,
+        imageURL: defaultUrl,
         category: category,
         description: description,
-        imageURL: defaultUrl,
         materials: materials,
         instructions: instructions,
         //createdBy: _id,
@@ -233,6 +236,7 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
         })
         .catch((err) => console.log(err));
     });
+    return;
   }
 });
 
