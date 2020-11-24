@@ -202,11 +202,10 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
     instructions,
   } = req.body;
 
-  //console.log("TITLE INPUT", req.body.title);
-
-  if (imageURL === undefined) {
+  if (imageUrl) {
     Craft.findByIdAndUpdate(id, {
       title: title,
+      imageURL: imageUrl,
       category: category,
       description: description,
       materials: materials,
@@ -217,21 +216,28 @@ siteRouter.post("/editPost", parser.single("imageURL"), (req, res, next) => {
         res.redirect("/favorites");
       })
       .catch((err) => console.log(err));
+    return;
   }
 
-  Craft.findByIdAndUpdate(id, {
-    title: title,
-    imageURL: imageUrl,
-    category: category,
-    description: description,
-    materials: materials,
-    instructions: instructions,
-    //createdBy: _id,
-  })
-    .then((updatedCraft) => {
-      res.redirect("/favorites");
-    })
-    .catch((err) => console.log(err));
+  if (imageURL === undefined) {
+    Craft.findById(id).then((craft) => {
+      let defaultUrl = craft.imageURL;
+      Craft.findByIdAndUpdate(id, {
+        title: title,
+        imageURL: defaultUrl,
+        category: category,
+        description: description,
+        materials: materials,
+        instructions: instructions,
+        //createdBy: _id,
+      })
+        .then((updatedCraft) => {
+          res.redirect("/favorites");
+        })
+        .catch((err) => console.log(err));
+    });
+    return;
+  }
 });
 
 module.exports = siteRouter;
