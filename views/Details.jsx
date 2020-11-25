@@ -4,9 +4,13 @@ const Layout = require("./Layout");
 function Details(props) {
   return (
     <Layout title="Results">
-      <button>
-        <a href={`/results/${props.craft.category}`}>Back to Results</a>
-      </button>
+      <div className="backbutton">
+        <a href={`/results/${props.craft.category}`} className="back">
+          <i className="fas fa-arrow-left"></i>
+          <span> Back to results</span>
+        </a>
+      </div>
+
       <div id="parent-div">
         <div id="upper-details">
           <img src={props.craft.imageURL} />

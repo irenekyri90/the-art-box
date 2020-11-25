@@ -5,20 +5,20 @@ function Signup(props) {
   return (
     <Layout>
       <h1 class="top-quote">"I craft so hard I sweat glitter."</h1>
+
+      <h3 class="signup-message">sign up</h3>
       <form id="signup-form" action="/auth/signup" method="POST">
-        <label>Username</label>
-
-        <input type="text" name="username" placeholder="Your username" />
+        <input type="text" name="username" placeholder="username" />
         <br />
-        <label>Email</label>
 
-        <input type="email" name="email" placeholder="Your email address" />
+        <input type="email" name="email" placeholder="email address" />
         <br />
-        <label>Password</label>
 
-        <input type="password" name="password" />
+        <input type="password" name="password" placeholder="password" />
         <br />
-        <button type="submit">Create account</button>
+        <button type="submit" id="signup-button">
+          create account
+        </button>
 
         {props.errorMessage ? (
           <div className="error-message"> {props.errorMessage} </div>
