@@ -272,13 +272,14 @@ footer {
 #searchbar > input {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  color: lightgray;
+  color: darkgray;
   width: 320px;
   height: 50px;
   text-align: center;
   font-size: 1.2rem;
   border-right-color: #ff9a76;
   border-color: #dcdcdc;
+  outline: none;
 }
 
 #search-button {
@@ -300,22 +301,57 @@ footer {
 #add-craft {
   display: flex;
   flex-direction: column;
-  width: 60vw;
-  margin: 0 auto;
+  justify-content: center;
+  border: 2px solid #ff9a76;
+  border-radius: 10px;
+  width: 800px;
+  margin: 50px auto;
+  padding: 50px;
+  text-align: center;
+}
+
+.instruction-field {
+  height: 80px;
+  width: 500px;
+  margin: 10px auto;
 }
 
 #add-craft > input {
   width: 250px;
-  margin: 10px;
+  margin: 10px auto;
+  padding: 10px;
 }
 
-#add-craft > div > label {
+#add-craft h3 {
   margin: 10px 10px 20px 20px;
+  letter-spacing: 2px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 2rem;
+  color: #679b9b;
+}
+
+#addButton {
+  margin: 20px auto;
 }
 
 /**********************************editPost*********************************/
 #hideId {
   display: none;
+}
+
+.post-intro {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+
+.post-intro img {
+  height: 50px;
+  width: auto;
 }
 
 /**********************************Favorites/Results*********************************/
@@ -462,6 +498,23 @@ hr {
   right: 40px;
 }
 
+.fa-heart-broken {
+  color: black;
+}
+
+#sorry-message {
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 200px;
+}
+
+#paintbrush {
+  height: 80px;
+  width: auto;
+  text-align: center;
+  margin: 30px;
+}
+
 /**********************************Signup*********************************/
 
 #signup-form {
@@ -485,12 +538,6 @@ hr {
   width: 400px;
   letter-spacing: 2px;
   border: none;
-}
-
-#paintbrush {
-  height: 120px;
-  width: auto;
-  text-align: center;
 }
 
 /**********************************Login*********************************/

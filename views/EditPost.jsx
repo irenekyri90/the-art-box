@@ -4,7 +4,12 @@ const Layout = require("./Layout");
 function EditPost(props) {
   return (
     <Layout>
-      <h3>EDIT Your POST</h3>
+      <div class="post-intro">
+        <h3>edit your post</h3>
+        <div>
+          <img src="./../images/pen.png" id="pen" />
+        </div>
+      </div>
 
       <form
         id="add-craft"
@@ -16,7 +21,7 @@ function EditPost(props) {
 
         <br />
 
-        <label>Craft Name:</label>
+        <h3>Craft Name:</h3>
         <input type="text" name="title" value={props.craft.title} />
 
         <br />
@@ -34,28 +39,28 @@ function EditPost(props) {
 
         <br />
         <h3>Instruction Steps</h3>
-        <input
-          type="textarea"
+        <textarea
+          class="instruction-field"
           name="instructions"
           value={props.craft.instructions[0]}
         />
-        <input
-          type="textarea"
+        <textarea
+          class="instruction-field"
           name="instructions"
           value={props.craft.instructions[1]}
         />
-        <input
-          type="textarea"
+        <textarea
+          class="instruction-field"
           name="instructions"
           value={props.craft.instructions[2]}
         />
-        <input
-          type="textarea"
+        <textarea
+          class="instruction-field"
           name="instructions"
           value={props.craft.instructions[3]}
         />
-        <input
-          type="textarea"
+        <textarea
+          class="instruction-field"
           name="instructions"
           value={props.craft.instructions[4]}
         />
@@ -87,7 +92,9 @@ function EditPost(props) {
           <label for="jewelry">Jewelry</label>
           <input type="radio" name="category" id="jewelry" value="Jewelry" />
         </div>
-        <button type="submit">Edit your craft</button>
+        <button type="submit" className="shareButton" id="addButton">
+          Edit your craft
+        </button>
       </form>
     </Layout>
   );
