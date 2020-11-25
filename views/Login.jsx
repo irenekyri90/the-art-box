@@ -5,16 +5,17 @@ function Login(props) {
   return (
     <Layout>
       <h1 class="top-quote">"Creative minds are rarely tidy."</h1>
-      <form id="form" action="/auth/login" method="POST">
-        <label>Username</label>
+      <h3 class="signup-message">log in</h3>
+      <form id="login-form" action="/auth/login" method="POST">
         <br />
-        <input type="text" name="username" placeholder="Your username" />
+        <input type="text" name="username" placeholder="username" />
 
-        <label>Password</label>
         <br />
-        <input type="password" name="password" />
+        <input type="password" name="password" placeholder="password" />
 
-        <button type="submit">Login</button>
+        <button type="submit" id="login-button">
+          login
+        </button>
       </form>
 
       {props.errorMessage ? (

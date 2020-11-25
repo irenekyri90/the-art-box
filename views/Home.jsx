@@ -47,7 +47,7 @@ function Home() {
           name="searchRequest"
           placeholder="What are you looking for?"
         />
-        <button type="submit" value="search">
+        <button type="submit" value="search" id="search-button">
           Search
         </button>
       </form>

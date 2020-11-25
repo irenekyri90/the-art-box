@@ -5,15 +5,18 @@ const Card = require("./components/Card");
 function Results(props) {
   return (
     <Layout title="Results">
-      <button>
-        <a href="/">Back to all categories</a>
-      </button>
+      <div className="backbutton">
+        <a href="/" className="back">
+          <i className="fas fa-arrow-left"></i>
+          <span> Back to all categories</span>
+        </a>
+      </div>
       <div className="add-creativity">
         <h2>Feeling Creative?</h2>
-        <button className="shareButton">
-          <a href="/addPost">Share your ideas !</a>
-        </button>
-      </div>  
+        <a href="/addPost">
+          <button className="shareButton">Share your ideas !</button>
+        </a>
+      </div>
       <div className="results">
         {props.crafts.map((craft, i) => {
           return <Card key={i} craft={craft} />;

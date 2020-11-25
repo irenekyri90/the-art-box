@@ -162,9 +162,18 @@ main {
 
 footer {
   text-align: center;
-  height: 150px;
+  height: 120px;
   width: 100%;
   background-color: #f7c5a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.footer-div p {
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .footer-icon {
@@ -253,14 +262,37 @@ footer {
 }
 
 #searchbar {
-  width: 400px;
-  margin: 0 auto;
+  text-align: center;
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  border-width: 1px;
 }
 
 #searchbar > input {
-  margin: 50px;
-  padding: 15px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: lightgray;
+  width: 320px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-right-color: #ff9a76;
+  border-color: #dcdcdc;
+}
+
+#search-button {
+  height: 50px;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: #ff9a76;
+  width: 110px;
+  background-color: #ff9a76;
+  color: #ffeadb;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
 }
 
 /**********************************addPost*********************************/
@@ -273,9 +305,8 @@ footer {
 }
 
 #add-craft > input {
-  margin: 5px;
-  width: 30vw;
-  margin: 0 auto;
+  width: 250px;
+  margin: 10px;
 }
 
 #add-craft > div > label {
@@ -313,7 +344,6 @@ footer {
 
 .empty-posts {
   min-height: 300px;
-  
 }
 
 .empty-posts p {
@@ -329,12 +359,9 @@ hr {
   border: none;
   height: 50px;
   width: 220px;
-  background-color: #ff9a76; 
+  background-color: #ff9a76;
   letter-spacing: 2px;
   margin: 20px;
-}
-
-.shareButton a {
   color: #ffeadb;
   font-weight: 500;
 }
@@ -351,26 +378,25 @@ hr {
 /**********************************Card/Results*********************************/
 
 .card {
-  border: 2px solid grey;
+  border: 1px solid #f7c5a8;
+  -webkit-box-shadow: 5px 5px 5px -3px rgba(86, 86, 86, 0.59);
+  box-shadow: 5px 5px 5px -3px rgba(86, 86, 86, 0.59);
   border-radius: 6px;
   margin: 20px;
   padding: 5px;
   text-align: center;
   width: 330px;
   background-color: #ffeadb;
-  height: 410px;
+  height: 420px;
   padding: 18px;
 }
-
-
 
 .card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border: 2px solid white;
+  border: 3px solid white;
   margin: 0 auto;
-  
 }
 
 .card h1 {
@@ -393,17 +419,11 @@ hr {
   /* border: 1px solid black; */
 }
 
-
-
-
-
-.card a h1 {
+.card h1 {
   color: #505050;
-  text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
-
 }
 
 .fave-div i {
@@ -415,9 +435,8 @@ hr {
 
 .fave-div i:hover {
   text-decoration: none;
-  
-    color: #ff9a76;
-  
+
+  color: #ff9a76;
 }
 
 .edit-div {
@@ -429,24 +448,115 @@ hr {
 .icon-parent i {
   font-size: 1.5rem;
   padding: 7px;
+  position: absolute;
+  bottom: 3px;
 }
 
 .fa-trash-alt {
   color: darkgray;
+  right: 10px;
 }
 
 .fa-pencil-alt {
   color: #679b9b;
+  right: 40px;
 }
 
 /**********************************Signup*********************************/
 
 #signup-form {
-  width: 200px;
+  width: 400px;
   margin: 0 auto;
+  padding-top: 80px;
+}
+
+#signup-form input {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 400px;
+  text-align: center;
+}
+
+#signup-button {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 400px;
+  letter-spacing: 2px;
+  border: none;
+}
+
+#paintbrush {
+  height: 120px;
+  width: auto;
+  text-align: center;
+}
+
+/**********************************Login*********************************/
+#login-form {
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+#login-form input {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 400px;
+  text-align: center;
+}
+
+#login-button {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 400px;
+  letter-spacing: 2px;
+  border: none;
+}
+
+.account-message {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.account-message a {
+  color: #ff9a76;
+}
+
+.account-message a:hover {
+  text-decoration: none;
+}
+
+.signup-message {
+  text-align: center;
+  padding-top: 60px;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
 }
 
 /**********************************Details*********************************/
+.backbutton {
+  margin: 20px;
+}
+
+.back {
+  margin-top: 200px;
+  font-size: 16px;
+  color: #ff9a76;
+}
+
+.back:hover {
+  text-decoration: none;
+  color: #f7c5a8;
+}
 
 #parent-div {
   display: flex;

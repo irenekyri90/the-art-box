@@ -26,11 +26,13 @@ function AddPost(props) {
         <br />
 
         <h3>Materials</h3>
-        <input type="text" name="materials" placeholder="e.g. wood" />
-        <input type="text" name="materials" placeholder="e.g. paper" />
-        <input type="text" name="materials" placeholder="e.g. material3" />
-        <input type="text" name="materials" placeholder="e.g. paper" />
-        <input type="text" name="materials" placeholder="e.g. paper" />
+        <input type="text" name="materials" placeholder="e.g wood"/>
+        <input type="text" name="materials" />
+        <input type="text" name="materials" />
+        <input type="text" name="materials" />
+        <input type="text" name="materials" />
+        <input type="text" name="materials" />
+        <input type="text" name="materials" />
 
         <br />
         <h3>Instruction Steps</h3>
@@ -67,7 +69,9 @@ function AddPost(props) {
           <label for="jewelry">Jewelry</label>
           <input type="radio" name="category" id="jewelry" value="Jewelry" />
         </div>
-        <button type="submit">Add your craft to our collection!</button>
+        <button type="submit" className="shareButton">
+          Add your craft to our collection!
+        </button>
       </form>
     </Layout>
   );

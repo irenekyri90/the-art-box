@@ -20,32 +20,32 @@ function Favorites(props) {
           )}
         </div>
 
-              <hr/>
+        <hr />
 
-        <div className="empty-posts">      
-        <h1>Your Posts</h1>
-        <button className="shareButton">
-          <a href="/addPost">Share your ideas !</a>
-        </button>
+        <div className="empty-posts">
+          <a href="/addPost">
+            <button className="shareButton">Share your ideas !</button>
+          </a>
+          <h1>Your Posts</h1>
 
-        {props.user.posts.length === 0 ? (
-          <p>You haven't posted anything yet.</p>
-        ) : (
-          <div className="results">
-            {props.user.posts.map((craft, i) => {
-              return (
-                <div>
-                  <Card
-                    key={i}
-                    craft={craft}
-                    userId={props.user._id}
-                    displayEditBtn={true}
-                  />
-                </div>
-              );
-            })}
-          </div>
-        )}
+          {props.user.posts.length === 0 ? (
+            <p>You haven't posted anything yet.</p>
+          ) : (
+            <div className="results">
+              {props.user.posts.map((craft, i) => {
+                return (
+                  <div>
+                    <Card
+                      key={i}
+                      craft={craft}
+                      userId={props.user._id}
+                      displayEditBtn={true}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
     </Layout>
