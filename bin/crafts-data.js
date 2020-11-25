@@ -218,7 +218,7 @@ const crafts = [
   {
     title: "Homemade Lotion",
     imageURL:
-      "https://wellnessmama.com/wp-content/uploads/Homemade-natural-lotion-recipe-with-only-three-ingredients-800x533.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4YrNp6djCHG9Kocg3XL8ENe3jeeNann-aSg&usqp=CAU",
     category: "Wellness",
     description:
       "If you are still using store-bought lotion on yourself or your family, there are super easy natural alternatives that are fun to make! This homemade lotion recipe has three basic ingredients and takes only ten minutes to whip together.",
