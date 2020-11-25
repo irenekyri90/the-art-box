@@ -53,7 +53,7 @@ const crafts = [
   {
     title: "Paper Chinese Lantern",
     imageURL:
-      "https://www.firstpalette.com/images/craft-mainpic-square/paperlantern-streamers.jpg",
+      "https://singaporeschild.com.sg/wp-content/uploads/2017/09/singapores-child-diy-lanterns-2.jpg",
     category: "Misc",
     description:
       "This paper Chinese Lantern is easy to make and looks great. Make lots and string them together for a cool decoration. Note: because this lantern is made of paper, we do NOT recommend that you use it as a real lampshade.",
@@ -216,7 +216,7 @@ const crafts = [
   },
 
   {
-    title: "Homemade Lotion Recipe",
+    title: "Homemade Lotion",
     imageURL:
       "https://wellnessmama.com/wp-content/uploads/Homemade-natural-lotion-recipe-with-only-three-ingredients-800x533.jpg",
     category: "Wellness",
@@ -344,41 +344,7 @@ const crafts = [
     favoritedBy: [],
   },
   {
-    title: "Stylish Necklace With a Stone and Tassel",
-    imageURL:
-      "https://www.thesprucecrafts.com/thmb/PCAIBoamDPc9PezCaSXjJv3VMEI=/1200x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/necklacefinal-5b35584146e0fb003ec08c11.jpg",
-    category: "Jewelry",
-    description:
-      "There is nothing more customized than choosing a piece of jewelry that fits your personality. The right piece, with special details, adds a sentimental touch to every outfit. But sometimes it can be hard to find just the right necklace. That does not have to be the case. Make your own necklace instead of buying one. It is a really fun hobby to get into and it is much easier than you think if you have the right supplies.",
-    materials: [
-      "Plain necklace chain",
-      "A precious stone",
-      "Embroidery thread",
-      "Bead cap",
-      "Connecting rings",
-      "E6000 craft adhesive",
-      "Small pliers",
-      "Small wooden skewer",
-      "Scissors",
-    ],
-    instructions: [
-      "Find your inspiration. Whether you are drawing from a favorite piece that you can not quite afford or looking to add a personal touch to your jewelry box, you want to create a piece that feels like you. And that takes a minute of thought and consideration.",
-      "For a playful and contemporary design without the high price tag, you can choose a piece of stone that would work with the colors in your wardrobe and add a complimentary tassel for a fun pop of color.",
-      "If you want to incorporate a stone in your design, then the stone choice is important. Choose a stone or crystal that you love. Each type has a different meaning and some have different energies, so follow your heart and intuition.",
-      "Using a small bamboo skewer, very carefully apply craft adhesive to the underside of the bead cap. Stick it to the top of your stone and depending on how large the stone is, you may have to bend the edges to conform to its shape. Using a connector ring, loop it through the top of the bead cap and then close the loop on the necklace chain. Make sure you let the glue dry according to the package directions before adding the new charm to your chain.",
-      "For the necklace chain, you do not have to buy a chain that comes with clasps attached, but for more novice jewelry makers it might be a smart move. Attaching the clasps is just one more extra step and can be costly to buy the pieces (chain and clasps) separately.",
-      "If you plan to add a tassel, you will be shocked by how easy it is and how adorable the finished product looks.",
-      "To form your tassel, cut a bunch of strands of embroidery thread the same length. Be sure to cut them a little longer than needed because you can always cut more off, but you will be able to add any back on.",
-      "Once you have a nice bunch of string, you will want to fold it in half—the folded ends of the string will form the top of the tassel. Slip a connecting ring through the top end of the tassel and then, using a separate piece of string, tie it around the top to complete the tassel.",
-      "Double knot the string so you know it will stay in place. You can then move that string up and down to change the size of the top of the tassel. Trim off any excess string you have on the bottom until you are pleased with the size.",
-      "Figure out where the center of the necklace is and where you want the charms to sit based on your neckline and the length of the chain. Using your small pliers—attach via the connecting rings—add your homemade charms to your necklace chain. Be sure that the rings are closed completely so you do not accidentally lose them.",
-      "Now that you have mastered some of the basics, you can use these same techniques to create all kinds of necklaces, bracelets, and earrings.",
-    ],
-    favoritedBy: [],
-  },
-
-  {
-    title: "Stylish Necklace With a Stone and Tassel",
+    title: "Necklace With a Stone and Tassel",
     imageURL:
       "https://www.thesprucecrafts.com/thmb/PCAIBoamDPc9PezCaSXjJv3VMEI=/1200x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/necklacefinal-5b35584146e0fb003ec08c11.jpg",
     category: "Jewelry",

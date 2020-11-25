@@ -10,7 +10,7 @@ function Card(props) {
     <a href={`/details/${props.craft._id}`}>
       <div className="card">
         <img src={props.craft.imageURL} />
-        <h1>{props.craft.title}</h1>
+        <h1 >{props.craft.title}</h1>
 
         <div className="icon-parent"> 
           <div className="fave-div">
