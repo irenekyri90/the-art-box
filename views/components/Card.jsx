@@ -10,29 +10,38 @@ function Card(props) {
     <a href={`/details/${props.craft._id}`}>
       <div className="card">
         <img src={props.craft.imageURL} />
-        <h1>{props.craft.title}</h1>
+        <h1 >{props.craft.title}</h1>
 
-        <a href={`/savePost/${props.craft._id}`}>
-          <i className="fas fa-heart"></i>
-        </a>
+        <div className="icon-parent"> 
+          <div className="fave-div">
+            <a href={`/savePost/${props.craft._id}`}>
+              <i className="fas fa-heart"></i>
+            </a>
 
-        {createdBy === userId ? (
-          <a href={`/deletePost/${props.craft._id}`}>
-            <i className="fas fa-trash-alt"></i>
-          </a>
-        ) : null}
+            {props.displayUnsaveBtn ? (
+              <a href={`/unsavePost/${props.craft._id}`}>
+                <i className="fas fa-heart-broken"></i>
+              </a>
+            ) : null}
 
-        {props.displayUnsaveBtn ? (
-          <a href={`/unsavePost/${props.craft._id}`}>
-            <i className="fas fa-heart-broken"></i>
-          </a>
-        ) : null}
+          </div>
 
-        {props.displayEditBtn ? (
-          <a href={`/editPost/${props.craft._id}`}>
-            <i className="fas fa-pencil-alt"></i>
-          </a>
-        ) : null}
+
+          <div className="edit-div">
+            {createdBy === userId ? (
+              <a href={`/deletePost/${props.craft._id}`}>
+                <i className="fas fa-trash-alt"></i>
+              </a>
+            ) : null}
+
+
+            {props.displayEditBtn ? (
+              <a href={`/editPost/${props.craft._id}`}>
+                <i className="fas fa-pencil-alt"></i>
+              </a>
+            ) : null}
+          </div>
+        </div>
       </div>
     </a>
   );

@@ -305,7 +305,47 @@ footer {
 }
 
 #welcome-message {
-  font-size: 30px;
+  font-size: 36px;
+  padding: 30px;
+  color: #ff9a76;
+  letter-spacing: 2px;
+}
+
+.empty-posts {
+  min-height: 300px;
+  
+}
+
+.empty-posts p {
+  padding-top: 100px;
+}
+
+hr {
+  width: 80%;
+}
+
+.shareButton {
+  border-radius: 15px;
+  border: none;
+  height: 50px;
+  width: 220px;
+  background-color: #ff9a76; 
+  letter-spacing: 2px;
+  margin: 20px;
+}
+
+.shareButton a {
+  color: #ffeadb;
+  font-weight: 500;
+}
+
+.add-creativity {
+  text-align: center;
+  margin: 40px;
+}
+
+.add-creativity h2 {
+  letter-spacing: 2px;
 }
 
 /**********************************Card/Results*********************************/
@@ -318,21 +358,24 @@ footer {
   text-align: center;
   width: 330px;
   background-color: #ffeadb;
+  height: 410px;
+  padding: 18px;
 }
 
-.card a:hover {
-  color: #ff9a76;
-}
+
 
 .card img {
-  width: 300px;
-  height: auto;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
   border: 2px solid white;
-  margin: 10px 5px;
+  margin: 0 auto;
+  
 }
 
 .card h1 {
   font-size: 20px;
+  padding-top: 10px;
 }
 
 .card button {
@@ -342,6 +385,58 @@ footer {
 
 .shareButton {
   padding: 10px;
+}
+
+.icon-parent {
+  display: flex;
+  /* justify-content: space-between; */
+  /* border: 1px solid black; */
+}
+
+
+
+
+
+.card a h1 {
+  color: #505050;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+}
+
+.fave-div i {
+  color: #ec524b;
+  /* display: flex;
+  flex-direction: row; */
+  /* border: 1px solid black; */
+}
+
+.fave-div i:hover {
+  text-decoration: none;
+  
+    color: #ff9a76;
+  
+}
+
+.edit-div {
+  /* display: flex; */
+  /* border: 1px solid black; */
+  margin-left: 60%;
+}
+
+.icon-parent i {
+  font-size: 1.5rem;
+  padding: 7px;
+}
+
+.fa-trash-alt {
+  color: darkgray;
+}
+
+.fa-pencil-alt {
+  color: #679b9b;
 }
 
 /**********************************Signup*********************************/

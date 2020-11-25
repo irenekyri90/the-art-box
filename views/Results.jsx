@@ -8,10 +8,12 @@ function Results(props) {
       <button>
         <a href="/">Back to all categories</a>
       </button>
-      <h2>Feeling Creative?</h2>
-      <button className="shareButton">
-        <a href="/addPost">Share your ideas!</a>
-      </button>
+      <div className="add-creativity">
+        <h2>Feeling Creative?</h2>
+        <button className="shareButton">
+          <a href="/addPost">Share your ideas !</a>
+        </button>
+      </div>  
       <div className="results">
         {props.crafts.map((craft, i) => {
           return <Card key={i} craft={craft} />;

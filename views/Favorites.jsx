@@ -6,21 +6,26 @@ function Favorites(props) {
   return (
     <Layout>
       <section id="favorites-page">
-        <h3 id="welcome-message">HELLO, {props.user.username}!</h3>
-        <h1>Saved Posts</h1>
-        {props.user.favorites.length === 0 ? (
-          <p>You haven't saved any posts yet.</p>
-        ) : (
-          <div className="results">
-            {props.user.favorites.map((craft, i) => {
-              return <Card key={i} craft={craft} displayUnsaveBtn={true} />;
-            })}
-          </div>
-        )}
+        <h3 id="welcome-message">Hello, {props.user.username} !</h3>
+        <div className="empty-posts">
+          <h1>Saved Posts</h1>
+          {props.user.favorites.length === 0 ? (
+            <p>You haven't saved any posts yet.</p>
+          ) : (
+            <div className="results">
+              {props.user.favorites.map((craft, i) => {
+                return <Card key={i} craft={craft} displayUnsaveBtn={true} />;
+              })}
+            </div>
+          )}
+        </div>
 
+              <hr/>
+
+        <div className="empty-posts">      
         <h1>Your Posts</h1>
         <button className="shareButton">
-          <a href="/addPost">Share your ideas!</a>
+          <a href="/addPost">Share your ideas !</a>
         </button>
 
         {props.user.posts.length === 0 ? (
@@ -41,6 +46,7 @@ function Favorites(props) {
             })}
           </div>
         )}
+        </div>
       </section>
     </Layout>
   );
