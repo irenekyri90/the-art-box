@@ -12,7 +12,7 @@ function AddPost(props) {
         method="POST"
         encType="multipart/form-data"
       >
-        <label>Craft Name:</label>
+        <h3>Craft Name:</h3>
         <input
           type="text"
           name="title"
@@ -21,12 +21,12 @@ function AddPost(props) {
 
         <br />
 
-        <label>Upload a picture of your craft</label>
+        <h3>Upload a picture of your craft</h3>
         <input type="file" name="imageURL" />
         <br />
 
         <h3>Materials</h3>
-        <input type="text" name="materials" placeholder="e.g wood"/>
+        <input type="text" name="materials" placeholder="e.g wood" />
         <input type="text" name="materials" />
         <input type="text" name="materials" />
         <input type="text" name="materials" />
@@ -36,11 +36,11 @@ function AddPost(props) {
 
         <br />
         <h3>Instruction Steps</h3>
-        <input type="textarea" name="instructions" />
-        <input type="textarea" name="instructions" />
-        <input type="textarea" name="instructions" />
-        <input type="textarea" name="instructions" />
-        <input type="textarea" name="instructions" />
+        <textarea name="instructions" class="instruction-field" />
+        <textarea name="instructions" class="instruction-field" />
+        <textarea name="instructions" class="instruction-field" />
+        <textarea name="instructions" class="instruction-field" />
+        <textarea name="instructions" class="instruction-field" />
 
         <h3>Choose the category, your craft fits into:</h3>
         <div>
@@ -69,7 +69,7 @@ function AddPost(props) {
           <label for="jewelry">Jewelry</label>
           <input type="radio" name="category" id="jewelry" value="Jewelry" />
         </div>
-        <button type="submit" className="shareButton">
+        <button type="submit" className="shareButton" id="addButton">
           Add your craft to our collection!
         </button>
       </form>

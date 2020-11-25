@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 function Signup(props) {
   return (
     <Layout>
-      <h1 class="top-quote">"I craft so hard I sweat glitter."</h1>
+      <h1 class="top-quote">"Creative minds are rarely tidy."</h1>
 
       <h3 class="signup-message">sign up</h3>
       <form id="signup-form" action="/auth/signup" method="POST">

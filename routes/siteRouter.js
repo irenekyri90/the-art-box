@@ -252,6 +252,7 @@ siteRouter.get("/craft-search", (req, res, next) => {
       res.render("SearchResults", props);
     })
     .catch((err) => {
+      res.render("SearchResults", props);
       console.log(err);
     });
 });
