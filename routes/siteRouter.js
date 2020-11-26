@@ -123,7 +123,7 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
   User.findById(_id).then((user) => {
     if (user.favorites.includes(craftId)) {
       console.log("already included");
-      res.redirect("back");
+      //res.redirect("back");
     } else {
       console.log("not included");
       User.findByIdAndUpdate(
@@ -133,7 +133,7 @@ siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {
       )
         .then((user) => {
           console.log("UPDATED USER:", user);
-          res.redirect("back");
+          //res.redirect("back");
         })
         .catch((err) => console.log(err));
     }

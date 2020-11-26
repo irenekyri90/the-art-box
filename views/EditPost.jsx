@@ -26,7 +26,14 @@ function EditPost(props) {
 
         <br />
 
-        <label>Upload a picture of your craft</label>
+        <h3>Description</h3>
+        <textarea
+          name="description"
+          class="instruction-field"
+          value={props.craft.description}
+        />
+
+        <h3>Upload a picture of your craft</h3>
         <input
           type="file"
           name="imageURL"
