@@ -1,5 +1,5 @@
 # THE ART BOX
-![welcomepic](/images/welcomepic.jpg)
+![welcomepic](public/images/welcomepic.jpg)
 
 
 ## Description
