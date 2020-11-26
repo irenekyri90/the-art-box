@@ -24,6 +24,9 @@ function AddPost(props) {
 
         <br />
 
+        <h3>Description</h3>
+        <textarea name="description" class="instruction-field" required />
+
         <h3>Upload a picture of your craft</h3>
         <input type="file" name="imageURL" className="file-upload" required />
         <br />
