@@ -11,9 +11,16 @@ function SearchResults(props) {
           <div>
             <img src="./../images/paintbrush.png" id="paintbrush" />
           </div>
+          <a href="/">back to browse</a>
         </div>
       ) : (
         <div>
+          <div className="backbutton">
+            <a href="/" className="back">
+              <i className="fas fa-arrow-left"></i>
+              <span> Back to all categories</span>
+            </a>
+          </div>
           <div className="add-creativity">
             <h2>Feeling Creative?</h2>
             <a href="/addPost">
