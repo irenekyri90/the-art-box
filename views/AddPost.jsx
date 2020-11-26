@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function AddPost(props) {
   return (
-    <Layout>
+    <Layout title="Add a Post">
       <div class="post-intro">
         <h3>add a post, {props.user.username}</h3>
       </div>
@@ -19,16 +19,17 @@ function AddPost(props) {
           type="text"
           name="title"
           placeholder="e.g. Rustic Candle Holders"
+          required
         />
 
         <br />
 
         <h3>Upload a picture of your craft</h3>
-        <input type="file" name="imageURL" className="file-upload" />
+        <input type="file" name="imageURL" className="file-upload" required />
         <br />
 
         <h3>Materials</h3>
-        <input type="text" name="materials" placeholder="e.g wood" />
+        <input type="text" name="materials" placeholder="e.g wood" required />
         <input type="text" name="materials" />
         <input type="text" name="materials" />
         <input type="text" name="materials" />
@@ -38,7 +39,7 @@ function AddPost(props) {
 
         <br />
         <h3>Instruction Steps</h3>
-        <textarea name="instructions" class="instruction-field" />
+        <textarea name="instructions" class="instruction-field" required />
         <textarea name="instructions" class="instruction-field" />
         <textarea name="instructions" class="instruction-field" />
         <textarea name="instructions" class="instruction-field" />
@@ -55,6 +56,7 @@ function AddPost(props) {
               name="category"
               id="wellness"
               value="Wellness"
+              required
             />
           </div>
 

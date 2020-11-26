@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function Login(props) {
   return (
-    <Layout>
+    <Layout title="Log In">
       <h1 class="top-quote">"I craft so hard I sweat glitter."</h1>
       <h3 class="signup-message">log in</h3>
       <form id="login-form" action="/auth/login" method="POST">

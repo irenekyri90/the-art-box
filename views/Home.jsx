@@ -4,7 +4,7 @@ const Card = require("./components/Card");
 
 function Home() {
   return (
-    <Layout title="Home Page">
+    <Layout title="Browse">
       <h1 className="top-quote">
         "Being Creative is not a Hobby, it's a Way of Life!"
       </h1>

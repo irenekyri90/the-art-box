@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function EditPost(props) {
   return (
-    <Layout>
+    <Layout title="Edit your Post">
       <div class="post-intro">
         <h3>edit your post</h3>
         <div>
@@ -27,7 +27,12 @@ function EditPost(props) {
         <br />
 
         <label>Upload a picture of your craft</label>
-        <input type="file" name="imageURL" value={props.craft.imageURL} className="file-upload" />
+        <input
+          type="file"
+          name="imageURL"
+          value={props.craft.imageURL}
+          className="file-upload"
+        />
         <br />
 
         <h3>Materials</h3>
@@ -76,6 +81,7 @@ function EditPost(props) {
               name="category"
               id="wellness"
               value="Wellness"
+              required
             />
           </div>
           <div class="category-selector">
