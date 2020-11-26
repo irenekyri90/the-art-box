@@ -97,9 +97,13 @@ siteRouter.post("/addPost", parser.single("imageURL"), (req, res, next) => {
           console.log("USER", user);
           res.redirect("/favorites");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+        });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 siteRouter.get("/savePost/:id", isLoggedIn, (req, res, next) => {

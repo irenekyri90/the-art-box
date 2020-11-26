@@ -410,11 +410,16 @@ footer {
 }
 
 .empty-posts {
-  min-height: 300px;
+  min-height: 350px;
 }
 
 .empty-posts p {
-  padding-top: 100px;
+  padding-top: 125px;
+  letter-spacing: 1px;
+}
+
+.empty-posts h1 {
+  letter-spacing: 2px;
 }
 
 hr {
@@ -663,6 +668,7 @@ hr {
   flex-direction: column;
   width: 1000px;
   margin: 50px auto;
+  margin-bottom: 100px;
   padding: 60px 40px;
   line-height: 25px;
   border: 2px solid #679b9b;
