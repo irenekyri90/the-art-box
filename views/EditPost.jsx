@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function EditPost(props) {
   return (
-    <Layout>
+    <Layout title="Edit your Post">
       <div class="post-intro">
         <h3>edit your post</h3>
         <div>
@@ -27,7 +27,12 @@ function EditPost(props) {
         <br />
 
         <label>Upload a picture of your craft</label>
-        <input type="file" name="imageURL" value={props.craft.imageURL} />
+        <input
+          type="file"
+          name="imageURL"
+          value={props.craft.imageURL}
+          className="file-upload"
+        />
         <br />
 
         <h3>Materials</h3>
@@ -65,32 +70,46 @@ function EditPost(props) {
           value={props.craft.instructions[4]}
         />
 
-        <h3>Choose the category, your craft fits into:</h3>
-        <div>
-          <label for="wellness">Wellness</label>
-          <input type="radio" name="category" id="wellness" value="Wellness" />
-
-          <label for="gardening">Gardening</label>
-          <input
-            type="radio"
-            name="category"
-            id="gardening"
-            value="Gardening"
-          />
-
-          <label for="misc">Misc</label>
-          <input type="radio" name="category" id="misc" value="Misc" />
-
-          <label for="home-decor">Home Decor</label>
-          <input
-            type="radio"
-            name="category"
-            id="home-decor"
-            value="Home Decor"
-          />
-
-          <label for="jewelry">Jewelry</label>
-          <input type="radio" name="category" id="jewelry" value="Jewelry" />
+        <h3 id="category-heading">
+          Choose the category, your craft fits into:
+        </h3>
+        <div id="radio-buttons">
+          <div class="category-selector">
+            <label for="wellness">Wellness</label>
+            <input
+              type="radio"
+              name="category"
+              id="wellness"
+              value="Wellness"
+              required
+            />
+          </div>
+          <div class="category-selector">
+            <label for="gardening">Gardening</label>
+            <input
+              type="radio"
+              name="category"
+              id="gardening"
+              value="Gardening"
+            />
+          </div>
+          <div class="category-selector">
+            <label for="misc">Misc</label>
+            <input type="radio" name="category" id="misc" value="Misc" />
+          </div>
+          <div class="category-selector">
+            <label for="home-decor">Home Decor</label>
+            <input
+              type="radio"
+              name="category"
+              id="home-decor"
+              value="Home Decor"
+            />
+          </div>
+          <div class="category-selector">
+            <label for="jewelry">Jewelry</label>
+            <input type="radio" name="category" id="jewelry" value="Jewelry" />
+          </div>
         </div>
         <button type="submit" className="shareButton" id="addButton">
           Edit your craft

@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function Details(props) {
   return (
-    <Layout title="Results">
+    <Layout title="Details">
       <div className="backbutton">
         <a href={`/results/${props.craft.category}`} className="back">
           <i className="fas fa-arrow-left"></i>
@@ -20,7 +20,11 @@ function Details(props) {
             <h2>Materials</h2>
             <ul>
               {props.craft.materials.map((element, i) => {
-                return <li key={i}>{element}</li>;
+                if (element.length === 0) {
+                  return null;
+                } else {
+                  return <li key={i}>{element}</li>;
+                }
               })}
             </ul>
           </div>
@@ -29,7 +33,11 @@ function Details(props) {
           <h2>Instructions</h2>
           <ol>
             {props.craft.instructions.map((element, i) => {
-              return <li key={i}>{element}</li>;
+              if (element.length === 0) {
+                return null;
+              } else {
+                return <li key={i}>{element}</li>;
+              }
             })}
           </ol>
         </div>

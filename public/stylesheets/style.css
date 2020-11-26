@@ -207,6 +207,10 @@ footer {
   box-shadow: 5px 5px 5px -3px rgba(86, 86, 86, 0.59);
 }
 
+.category-container:hover {
+  box-shadow: none;
+}
+
 #categories {
   margin-top: 80px;
   display: flex;
@@ -308,6 +312,7 @@ footer {
   margin: 50px auto;
   padding: 50px;
   text-align: center;
+  background-color: #ffeadb;
 }
 
 .instruction-field {
@@ -323,15 +328,39 @@ footer {
 }
 
 #add-craft h3 {
-  margin: 10px 10px 20px 20px;
-  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
   font-family: "Patrick Hand", cursive;
   font-size: 2rem;
+  font-weight: 600;
   color: #679b9b;
 }
 
 #addButton {
-  margin: 20px auto;
+  margin: 50px auto;
+}
+
+#radio-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+  margin: 30px auto;
+}
+
+.category-selector > label {
+  padding: 6px;
+  letter-spacing: 1px;
+}
+
+#category-heading {
+  margin-top: 40px;
+}
+
+.file-upload {
+  border: 1px solid gray;
+  background-color: white;
+  color: gray;
 }
 
 /**********************************editPost*********************************/
@@ -347,11 +376,13 @@ footer {
   justify-content: center;
   letter-spacing: 2px;
   font-size: 1.3rem;
+  margin-top: 50px;
 }
 
 .post-intro img {
-  height: 50px;
+  height: 35px;
   width: auto;
+  margin-left: 10px;
 }
 
 /**********************************Favorites/Results*********************************/
@@ -379,11 +410,16 @@ footer {
 }
 
 .empty-posts {
-  min-height: 300px;
+  min-height: 350px;
 }
 
 .empty-posts p {
-  padding-top: 100px;
+  padding-top: 125px;
+  letter-spacing: 1px;
+}
+
+.empty-posts h1 {
+  letter-spacing: 2px;
 }
 
 hr {
@@ -402,13 +438,21 @@ hr {
   font-weight: 500;
 }
 
+.shareButton:hover {
+  background-color: #ffeadb;
+  color: #ff9a76;
+  border: 2px solid #ff9a76;
+  outline: #ff9a76;
+}
+
 .add-creativity {
   text-align: center;
   margin: 40px;
 }
 
 .add-creativity h2 {
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
 }
 
 /**********************************Card/Results*********************************/
@@ -425,6 +469,10 @@ hr {
   background-color: #ffeadb;
   height: 420px;
   padding: 18px;
+}
+
+.card:hover {
+  box-shadow: none;
 }
 
 .card img {
@@ -495,7 +543,7 @@ hr {
 
 .fa-pencil-alt {
   color: #679b9b;
-  right: 40px;
+  right: 45px;
 }
 
 .fa-heart-broken {
@@ -508,12 +556,22 @@ hr {
   margin: 200px;
 }
 
+#sorry-message a {
+  color: #ff9a76;
+  
+}
+
 #paintbrush {
   height: 80px;
   width: auto;
   text-align: center;
   margin: 30px;
 }
+
+.results {
+  margin-bottom: 100px;
+}
+
 
 /**********************************Signup*********************************/
 
@@ -610,22 +668,40 @@ hr {
   flex-direction: column;
   width: 1000px;
   margin: 50px auto;
-  padding: 40px;
+  margin-bottom: 100px;
+  padding: 60px 40px;
   line-height: 25px;
-  border: 2px solid #ff9a76;
+  border: 2px solid #679b9b;
+  border-radius: 10px;
+  background-color: #fff6f0;
+}
+
+#parent-div h3,
+#parent-div h2 {
+  color: #679b9b;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
 #upper-details {
   display: flex;
+  /* align-items: center; */
 }
 
 #upper-details img {
   width: 400px;
-  height: auto;
+  border: 3px solid white;
+  margin-right: 20px;
+  height: 400px;
+  object-fit: cover;
 }
 
 #side-details {
   margin-left: 30px;
+}
+
+#side-details p {
+  margin-bottom: 20px;
 }
 
 #lower-details {

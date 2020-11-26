@@ -1,4 +1,5 @@
 const React = require("react");
+const isLoggedIn = require("../utils/isLoggedIn");
 
 function Layout(props) {
   return (
@@ -70,6 +71,7 @@ function Layout(props) {
                     Log In
                   </a>
                 </li>
+
                 <li className="nav-item">
                   <a className="nav-link" href="/auth/logout">
                     Log out

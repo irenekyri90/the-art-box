@@ -4,16 +4,23 @@ const Card = require("./components/Card");
 
 function SearchResults(props) {
   return (
-    <Layout title="SearchResults">
+    <Layout title="Search Results">
       {props.crafts.length === 0 ? (
         <div id="sorry-message">
           <h3>sorry, we could not find any results :(</h3>
           <div>
             <img src="./../images/paintbrush.png" id="paintbrush" />
           </div>
+          <a href="/">back to browse</a>
         </div>
       ) : (
         <div>
+          <div className="backbutton">
+            <a href="/" className="back">
+              <i className="fas fa-arrow-left"></i>
+              <span> Back to all categories</span>
+            </a>
+          </div>
           <div className="add-creativity">
             <h2>Feeling Creative?</h2>
             <a href="/addPost">

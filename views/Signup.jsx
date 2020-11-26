@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function Signup(props) {
   return (
-    <Layout>
+    <Layout title="Sign Up">
       <h1 class="top-quote">"Creative minds are rarely tidy."</h1>
 
       <h3 class="signup-message">sign up</h3>
