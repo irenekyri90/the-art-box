@@ -1,6 +1,6 @@
 # THE ART BOX
+![welcomepic](/images/welcomepic.jpg)
 
-![welcomepic](/Users/luciaskudlik/Documents/IRONHACK/DIY-CRAFTS/welcomepic.jpg)
 
 ## Description
 
