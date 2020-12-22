@@ -78,7 +78,7 @@ Craft model
 
 https://github.com/luciaskudlik/the-art-box/edit/master/README.md
 
-https://the-art-box.herokuapp.com/
+[Deployed Link](https://the-art-box.herokuapp.com/)
 
 ### Wireframes
 
@@ -93,3 +93,9 @@ https://trello.com/b/rubzmtQW/todo
 ### Slides
 
 https://docs.google.com/presentation/d/1fPd4-N9Ni06AqSUoN3xFw1r28bZ7gstBLiI0irV81pU/edit?usp=sharing
+
+### Participants
+
+[Irene Kyritsis](https://github.com/irenekyri90)
+[Lucia Skudlik](https://github.com/luciaskudlik)
+
