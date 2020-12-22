@@ -76,9 +76,9 @@ Craft model
 
 ### Git
 
-Repository Link
+https://github.com/luciaskudlik/the-art-box/edit/master/README.md
 
-Deploy Link
+https://the-art-box.herokuapp.com/
 
 ### Wireframes
 
