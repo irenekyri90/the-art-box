@@ -14,7 +14,8 @@ siteRouter.get("/results/:category", (req, res, next) => {
   );
   Craft.find({ category: category })
     .then((craftsFromDB) => {
-      const props = { crafts: craftsFromDB };
+      const userIsLoggedIn = Boolean(req.session.currentUser);
+      const props = { crafts: craftsFromDB, userIsLoggedIn };
       console.log(props.crafts);
       res.render("Results", props);
     })
@@ -29,7 +30,8 @@ siteRouter.get("/details/:id", (req, res, next) => {
   Craft.findById(craftId)
     .then((craft) => {
       console.log("CRAFT: ", craft);
-      const props = { craft: craft };
+      const userIsLoggedIn = Boolean(req.session.currentUser);
+      const props = { craft: craft, userIsLoggedIn };
       res.render("Details", props);
     })
     .catch((err) => console.log(err));
@@ -45,7 +47,8 @@ siteRouter.get("/favorites", isLoggedIn, (req, res, next) => {
     .then((user) => {
       //console.log("USER POSTS:", user.posts);
 
-      const props = { user: user };
+      const userIsLoggedIn = Boolean(req.session.currentUser);
+      const props = { user: user, userIsLoggedIn };
       res.render("Favorites", props);
     })
     .catch((err) => console.log(err));
@@ -56,7 +59,8 @@ siteRouter.get("/addPost", isLoggedIn, (req, res, next) => {
   User.findById(_id)
     .then((user) => {
       console.log(user);
-      const props = { user: user };
+      const userIsLoggedIn = Boolean(req.session.currentUser);
+      const props = { user: user, userIsLoggedIn };
       res.render("AddPost", props);
     })
     .catch((err) => console.log(err));
@@ -183,7 +187,8 @@ siteRouter.get("/editPost/:id", isLoggedIn, (req, res, next) => {
   const { _id } = req.session.currentUser;
   Craft.findById(craftId)
     .then((craft) => {
-      const props = { craft: craft };
+      const userIsLoggedIn = Boolean(req.session.currentUser);
+      const props = { craft: craft, userIsLoggedIn };
       res.render("EditPost", props);
     })
     .catch((err) => {
@@ -252,7 +257,8 @@ siteRouter.get("/craft-search", (req, res, next) => {
   Craft.find({ title: { $regex: newWord } })
     .then((crafts) => {
       console.log("CRAFT: ", crafts[0]);
-      const props = { crafts: crafts };
+      const userIsLoggedIn = Boolean(req.session.currentUser);
+      const props = { crafts: crafts, userIsLoggedIn };
       res.render("SearchResults", props);
     })
     .catch((err) => {

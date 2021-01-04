@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function Details(props) {
   return (
-    <Layout title="Details">
+    <Layout title="Details" userIsLoggedIn={props.userIsLoggedIn}>
       <div className="backbutton">
         <a href={`/results/${props.craft.category}`} className="back">
           <i className="fas fa-arrow-left"></i>

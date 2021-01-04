@@ -3,7 +3,7 @@ const Layout = require("./Layout");
 
 function AddPost(props) {
   return (
-    <Layout title="Add a Post">
+    <Layout title="Add a Post" userIsLoggedIn={props.userIsLoggedIn}>
       <div class="post-intro">
         <h3>add a post, {props.user.username}</h3>
       </div>

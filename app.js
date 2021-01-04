@@ -57,7 +57,9 @@ app.use("/", siteRouter);
 
 /* GET home page. */
 app.get("/", (req, res, next) => {
-  res.render("Home");
+  const userIsLoggedIn = Boolean(req.session.currentUser);
+  const props = { userIsLoggedIn };
+  res.render("Home", props);
 });
 
 module.exports = app;
