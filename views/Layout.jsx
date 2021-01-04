@@ -1,5 +1,4 @@
 const React = require("react");
-const isLoggedIn = require("../utils/isLoggedIn");
 
 function Layout(props) {
   return (
@@ -61,22 +60,27 @@ function Layout(props) {
                     Favorites
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/auth/signup">
-                    Sign Up
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/auth/login">
-                    Log In
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="/auth/logout">
-                    Log out
-                  </a>
-                </li>
+                {!props.userIsLoggedIn ? (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/auth/signup">
+                      Sign Up
+                    </a>
+                  </li>
+                ) : null}
+                {!props.userIsLoggedIn ? (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/auth/login">
+                      Log In
+                    </a>
+                  </li>
+                ) : null}
+                {props.userIsLoggedIn ? (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/auth/logout">
+                      Log out
+                    </a>
+                  </li>
+                ) : null}
               </ul>
             </div>
           </nav>

@@ -4,7 +4,7 @@ const Card = require("./components/Card");
 
 function Favorites(props) {
   return (
-    <Layout title="Favorites">
+    <Layout title="Favorites" userIsLoggedIn={props.userIsLoggedIn}>
       <section id="favorites-page">
         <h3 id="welcome-message">Hello, {props.user.username} !</h3>
         <div className="empty-posts">

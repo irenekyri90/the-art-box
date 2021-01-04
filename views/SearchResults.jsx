@@ -4,7 +4,7 @@ const Card = require("./components/Card");
 
 function SearchResults(props) {
   return (
-    <Layout title="Search Results">
+    <Layout title="Search Results" userIsLoggedIn={props.userIsLoggedIn}>
       {props.crafts.length === 0 ? (
         <div id="sorry-message">
           <h3>sorry, we could not find any results :(</h3>

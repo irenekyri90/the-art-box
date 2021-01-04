@@ -4,7 +4,7 @@ const Card = require("./components/Card");
 
 function Results(props) {
   return (
-    <Layout title="Results">
+    <Layout title="Results" userIsLoggedIn={props.userIsLoggedIn}>
       <div className="backbutton">
         <a href="/" className="back">
           <i className="fas fa-arrow-left"></i>

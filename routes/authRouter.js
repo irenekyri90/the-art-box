@@ -93,7 +93,9 @@ authRouter.post("/login", (req, res, next) => {
   const { username, password } = req.body;
 
   if (username === "" || password === "") {
-    const props = { errorMessage: "Please enter username and password" };
+    const props = {
+      errorMessage: "Please enter username and password",
+    };
 
     res.render("Login", props);
     return;
@@ -127,8 +129,11 @@ authRouter.post("/login", (req, res, next) => {
 authRouter.get("/logout", isLoggedIn, (req, res, next) => {
   req.session.destroy((err) => {
     if (err) {
-      res.render("Error");
+      //res.render("Error");
+      console.log(err);
+      //res.send()
     } else {
+      //props = { showLogoutButton: false };
       res.redirect("/auth/login");
     }
   });

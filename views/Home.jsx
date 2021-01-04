@@ -1,10 +1,11 @@
 const React = require("react");
 const Layout = require("./Layout");
 const Card = require("./components/Card");
+const { PromiseProvider } = require("mongoose");
 
-function Home() {
+function Home(props) {
   return (
-    <Layout title="The Art Box">
+    <Layout title="The Art Box" userIsLoggedIn={props.userIsLoggedIn}>
       <h1 className="top-quote">
         "Being Creative is not a Hobby, it's a Way of Life!"
       </h1>
